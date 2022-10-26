@@ -11,7 +11,10 @@ Para criar e executar uma aplicação angular é necessário primeiro fazer o do
 Também é necessário a IDE VSCode (disponível em: https://code.visualstudio.com/)
 Após o nodejs e o VSCode instalados, basta fazer a instação do Angular CLI no terminal. Comando para instalar o Angular CLI: `npm install -g @angular/cli` 
 ### Nota
-Em máquina com o sistema operacional windows é necessário habilitar a execução de scripts do PowerShell. Para isso é necessário executar o seguinte comando no terminal: `Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned`
+Em máquina com o sistema operacional windows é necessário habilitar a execução de scripts do PowerShell. Para isso é necessário executar o seguinte comando no terminal: 
+``` bash
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+```
 
 
 ## Criando uma nova aplicação Angular
