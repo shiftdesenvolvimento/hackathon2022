@@ -8,7 +8,9 @@ Angular é um framework usado para criar Single Page Applications (SPA). Uma SPA
 ## Instalação
 
 Para criar e executar uma aplicação angular é necessário primeiro fazer o download do node.js na sua versão LTS (disponível em: https://nodejs.org/en/)
+
 Também é necessário a IDE VSCode (disponível em: https://code.visualstudio.com/)
+
 Após o nodejs e o VSCode instalados, basta fazer a instação do Angular CLI no terminal. Comando para instalar o Angular CLI: 
 ``` bash 
 npm install -g @angular/cli
