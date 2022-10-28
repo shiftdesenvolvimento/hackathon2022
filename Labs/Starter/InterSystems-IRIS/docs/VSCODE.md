@@ -3,7 +3,7 @@
 ## Plugins
 Para acessar o servidor IRIS através do VsCode instale o plugin InterSystems [ObjectScript Extension Pack](https://marketplace.visualstudio.com/items?itemName=daimor.vscode-objectscript)
 
-![vscodeintersystemextensionpack.png](docs/img/vscodeintersystemextensionpack.png)
+![vscodeintersystemextensionpack.png](img/vscodeintersystemextensionpack.png)
 
 
 ## Dockerfile

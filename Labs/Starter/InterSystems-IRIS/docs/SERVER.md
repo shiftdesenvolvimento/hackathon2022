@@ -4,21 +4,21 @@
 - Acesse Sistema > Configuração > Namespaces > Criar novo namespace
 - Preencha os dados do namespace:
 
-![namespace.png](docs/img/namespace.png)
+![namespace.png](img/namespace.png)
 
 
 ## Manutenção de usuários
 
 No portal de administração, acesse Sistema > Administração de Segurança > Usuários para visualizar os usuários existentes e seus direitos de acesso
 
-![irisusuarios.png](docs/img/irisusuarios.png)
+![irisusuarios.png](img/irisusuarios.png)
 
 Ao criar um novo usuário, para facilitar copie os direitos de acesso de um usuário existente
 
-![irisnovousuario.png](docs/img/irisnovousuario.png)
+![irisnovousuario.png](img/irisnovousuario.png)
 
 Na edição do usuário é possível definir os direitos de acesso, para adicionar uma nova função ao usuário selecione na lista, e clique no botão aplicar
 
-![irisuserroles.png](docs/img/irisuserroles.png)
+![irisuserroles.png](img/irisuserroles.png)
 
 Para mais detalhes [Documentação Intersystem contas de usuário](https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GAUTHZ_users)

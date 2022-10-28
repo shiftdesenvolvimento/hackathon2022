@@ -1,7 +1,7 @@
 # Executando comandos SQL
 Pelo portal de admnistração é possível executar comandos SQL através do menu: Sistema > SQL, Selecione a namespace que deseja acessar, este editor aceita comandos SQL padrão e específicos Caché/IRIS
 
-![irissql.png](docs/img/irissql.png)
+![irissql.png](img/irissql.png)
 
 ## Pontos de atenção
 - Atenção para o modo da consulta, para visualizar dados como datas e campos enumerados utilize o "modo de exibição"
