@@ -32,7 +32,7 @@ Executar container IRIS com o seu projeto:
 $ docker-compose exec iris iris session iris
 ```
 
-- Portal de administração: Nesta ferramenta é possível realizar configurações do servidor, ambiente, acessar o banco de dados, realizar análises de performance, 
+- Portal de administração: Nesta ferramenta é possível realizar configurações do servidor, ambiente, acessar o banco de dados, realizar análises de performance 
 ```
 http://localhost:53773/csp/sys/%25CSP.Portal.Home.zen
     - usuario: _SYSTEM
@@ -43,7 +43,6 @@ http://localhost:53773/csp/sys/%25CSP.Portal.Home.zen
 ## Mais detalhes
 
 - [Servidor](docs/SERVER.md)
-- [Acessando o banco de dados](docs/SERVER.md)
 - [Executando comandos SQL](docs/SQL.md)
 - [Logs de erros](docs/LOGS.md)
 - [VsCode](docs/VSCODE.md)
