@@ -5,14 +5,15 @@
         "iris.script": "objectscript"
       },
     "objectscript.conn" :{
-      "ns": "USER",
+      "ns": "STARTER",
       "username": "_SYSTEM",
       "password": "SYS",
       "docker-compose": {
         "service": "iris",
         "internalPort": 52773
       },
-      "active": true
+      "active": true,
+      "server": "default~iris"
     },
     "sqltools.connections": [
       {
