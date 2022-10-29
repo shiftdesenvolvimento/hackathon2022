@@ -7,7 +7,7 @@ Angular é um framework usado para criar Single Page Applications (SPA). Uma SPA
 
 ## Instalação
 
-Para criar e executar uma aplicação angular é necessário primeiro fazer o download do node.js na sua versão LTS (disponível em: https://nodejs.org/en/)
+Para criar e executar uma aplicação angular é necessário primeiro fazer o download do node.js. Recomenda-se o uso da versão 16.13.1, disponível para download em https://nodejs.org/download/release/v16.13.1/
 
 Também é necessário a IDE VSCode (disponível em: https://code.visualstudio.com/)
 
