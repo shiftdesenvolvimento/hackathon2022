@@ -1,3 +1,5 @@
+import { Telefone } from "./telefone.model";
+
 export interface Paciente {
     id: number,
     nome: string,

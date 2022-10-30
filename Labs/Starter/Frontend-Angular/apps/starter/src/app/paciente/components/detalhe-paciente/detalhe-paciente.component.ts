@@ -15,7 +15,7 @@ export class DetalhePacienteComponent implements OnInit {
     nome: '',
     cpf: '',
     dataNascimento: '',
-    email: ''
+    email: '',
   };
 
   message = '';
