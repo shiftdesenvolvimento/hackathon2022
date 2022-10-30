@@ -49,7 +49,7 @@ Após a instalação será necessário abrir o VSCode e editar o arquivo src/sty
 Por último, será necessário editar o arquivo angular.json incluindo as seguintes instruções:
 
 ``` json
-....
+
       "styles": [
         "node_modules/bootstrap/dist/css/bootstrap.min.css",
         "src/styles.css"
@@ -58,7 +58,7 @@ Por último, será necessário editar o arquivo angular.json incluindo as seguin
           "node_modules/jquery/dist/jquery.min.js",
           "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
       ]
-.....
+
 ```
 
 ## Executando a aplicação
