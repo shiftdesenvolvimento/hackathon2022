@@ -30,7 +30,40 @@ Após todos os requisitos de instalação terem sido atendidos, o proxímo passo
 ng new minha-aplicacao
 ```
 
+### Adicionando o bootstrap
+
+Para adicionar o Bootstrap na sua aplicação você precisará executar os seguintes comandos:
+``` bash
+cd minha-aplicacao
+npm install bootstrap --save
+npm install jquery --save
+npm install popper.js --save
+```
+
+Após a instalação será necessário abrir o VSCode e editar o arquivo src/style.css adicionando a seguinte linha:
+
+``` css
+@import "~bootstrap/dist/css/bootstrap.css";
+```
+
+Por último, será necessário editar o arquivo angular.json incluindo as seguintes instruções:
+
+``` json
+....
+      "styles": [
+        "node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "src/styles.css"
+      ],
+      "scripts": [
+          "node_modules/jquery/dist/jquery.min.js",
+          "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+      ]
+.....
+```
+
 ## Executando a aplicação
 
 Após criada a aplicação, você pode executá-la com o seguinte comando: `ng serve --open`. Esse comando já vai abrir o navegador no endereço `http://localhost:4200/`
 
+
+## Dcoumentação adicional
