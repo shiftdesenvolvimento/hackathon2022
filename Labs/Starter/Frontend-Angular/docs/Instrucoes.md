@@ -106,7 +106,7 @@ Para que uma aplicação que utilize formulários funcione é preciso importar o
 ``` typescript
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
 ```
 Observe os arquivos `.module` para verificar o uso desses pacotes.
 
