@@ -1,63 +1,52 @@
 # backend-java Project
 
-![api](docs/img/api.png)
+introdução amigavel
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+## Pré requisitos
 
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+ - Não possuir aplicações rodando na porta 8080, verifique  como matar aplicações rodando na porta 8080 de acordo com seu sistema operacional.
 
-## Running the application in dev mode
-
-You can run your application in dev mode that enables live coding using:
-```shell script
-./mvnw compile quarkus:dev
+    caso esteja em uma arquitetura linux pode executar os comandos abaixo para verificar e matar processos em 8080. 
+```sh script
+linux:
+    $ netstat -anop | grep 8080
+    $ kill -9 <pid>
 ```
 
-> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at http://localhost:8080/q/dev/.
+ - Possuir o JDK 11 instalado.
 
-## Packaging and running the application
+ - Banco de dados IRIS esteja funcinando corretamente. Executando: 
 
-The application can be packaged using:
-```shell script
-./mvnw package
-```
-It produces the `quarkus-run.jar` file in the `target/quarkus-app/` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/quarkus-app/lib/` directory.
-
-The application is now runnable using `java -jar target/quarkus-app/quarkus-run.jar`.
-
-If you want to build an _über-jar_, execute the following command:
-```shell script
-./mvnw package -Dquarkus.package.type=uber-jar
+```sh script
+    docker ps 
 ```
 
-The application, packaged as an _über-jar_, is now runnable using `java -jar target/*-runner.jar`.
+E verifique se o conteiner `intersystems-iris-iris` está up e com status `(healthy)`.
 
-## Creating a native executable
+## Inicializando sistema
 
-You can create a native executable using: 
-```shell script
-./mvnw package -Pnative
+Primeiro execute para instalar dependencias do maven:
+
+```sh script
+    ./mvnw install
 ```
 
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using: 
-```shell script
-./mvnw package -Pnative -Dquarkus.native.container-build=true
+Após isso, execute para iniciar a aplicação:
+
+```sh script
+    ./mvnw clean quarkus:dev
 ```
+## Arquitetura
 
-You can then execute your native executable with: `./target/backend-java-1.0.0-SNAPSHOT-runner`
+O presente sistema tem uma arquiterura em cebola, onde camadas mais profundas não acessão camadas mais superficiais. 
 
-If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.
+![api](docs/img/Camadas.png)
 
-## Related Guides
-
-- RESTEasy Reactive ([guide](https://quarkus.io/guides/resteasy-reactive)): A JAX-RS implementation utilizing build time processing and Vert.x. This extension is not compatible with the quarkus-resteasy extension, or any of the extensions that depend on it.
-- Hibernate ORM with Panache ([guide](https://quarkus.io/guides/hibernate-orm-panache)): Simplify your persistence code for Hibernate ORM via the active record or the repository pattern
-
-## Provided Code
-
-### RESTEasy Reactive
-
-Easily start your Reactive RESTful Web Services
-
-[Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
+### Camadas
+ - JAVA (Frameworks): Recursos e frameworks JAVA. 
+ - Repository: Conjunto de recursos e elementos responsáveis pelo tratamentos e persistencia dos dados.
+   - Entity: Mapeamento das tabelas do banco de dados.
+   - Dao: Classes responsáveis por manipular e persistir as Entidades.
+   - Dto: Classes responsáveis por transferir dados entre as camadas, não possui conexão com banco de dados.
+ - Services: Classes responsáveis pela aplicação e manipulação de Repository para aplicação de regras de negócio. 
+ - REST/SOAP: Endpoits e rotas. (recursos externos)
