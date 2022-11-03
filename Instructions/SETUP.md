@@ -7,5 +7,5 @@ Realize o download e instalação das ferramentas:
 - [JDK v11](https://adoptopenjdk.net/?variant=openjdk11&jvmVariant=openj9)
 - [VsCode](https://code.visualstudio.com/)
 
-## Cópia do repositório:
-Faça um **fork** deste repositório usando sua conta github, em seguida realize o clone do seu repositório.
+## Copiar o repositório:
+Faça um **fork** desse repositório usando sua conta github, em seguida realize o clone do seu repositório no ambiente de desenvolvimento local.
