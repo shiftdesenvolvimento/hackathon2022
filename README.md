@@ -1,4 +1,4 @@
-# Hackathon Shift
+# 1ª Edição Hackathon Shift
 
 [Saiba mais sobre o evento...](https://conteudo.shift.com.br/1-hackathon-shift)
 
