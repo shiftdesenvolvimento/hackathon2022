@@ -4,4 +4,4 @@
 
 ## Material de apoio
 - [Preparação ambiente de desenvolvimento](Instructions/SETUP.md)
-- [Projeto base Demonstrativo](Instructions/DEMO.md)
+- [Projeto base demonstrativo](Instructions/DEMO.md)
