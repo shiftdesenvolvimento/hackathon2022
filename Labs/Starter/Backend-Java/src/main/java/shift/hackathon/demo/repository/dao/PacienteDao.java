@@ -20,6 +20,7 @@ public class PacienteDao implements PanacheRepositoryBase<Paciente, Long> {
     
     public PacienteDto salvar(PacienteDto pacienteDto) {
         var paciente = pacienteConverter.toEntity(pacienteDto);
+        
         persist(paciente);
 
         return pacienteConverter.toDto(paciente);

@@ -3,6 +3,7 @@ package shift.hackathon.demo.repository.entity;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -18,7 +19,6 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 @Getter
@@ -48,8 +48,7 @@ public class Pessoa {
     @Column(name = "Email")
     private String email;
 
-    @ToString.Exclude
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     @JoinTable(
         name = "starter_entity.PacienteEndereco",
         joinColumns = @JoinColumn(name = "PessoaId"),
@@ -57,8 +56,7 @@ public class Pessoa {
     )
     private List<Endereco> enderecos;
 
-    @ToString.Exclude
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     @JoinTable(
         name = "starter_entity.PessoaTelefone",
         joinColumns = @JoinColumn(name = "PessoaId"),
