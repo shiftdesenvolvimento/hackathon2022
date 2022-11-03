@@ -1,5 +1,5 @@
-# Setup ambiente de desenvolvimento
-## Pré-requisitos:
+# Preparação ambiente de desenvolvimento
+## Pré-requisito:
 Realize o download e instalação das ferramentas:
 - [Git](https://git-scm.com/downloads)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
