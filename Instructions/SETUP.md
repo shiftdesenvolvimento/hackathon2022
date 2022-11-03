@@ -8,4 +8,4 @@ Realize o download e instalação das ferramentas:
 - [VsCode](https://code.visualstudio.com/)
 
 ## Cópia do repositório:
-Faça um **fork** deste repositório para que possa alterar livremente.
+Faça um **fork** deste repositório usando sua conta github, em seguida realize o clone do seu repositório.
