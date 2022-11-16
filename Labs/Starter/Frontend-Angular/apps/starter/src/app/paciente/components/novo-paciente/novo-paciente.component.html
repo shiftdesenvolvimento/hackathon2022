@@ -1,42 +1,16 @@
-<div>
+<div class="submit-form">
+    <div>
+        <button type="button" class="btn btn-dark" (click)="voltar()">
+            &#10094; Voltar
+        </button>
+    </div>
     <h4 style="text-align: center">Novo Paciente</h4>
-    <div class="submit-form">
-        <div *ngIf="!submitted">
-            <div class="form-group">
-                <label for="nome">Nome</label>
-                <input type="text" class="form-control" id="nome" required [(ngModel)]="paciente.nome" name="nome" />
-            </div>
-
-            <div class="form-group">
-                <label for="cpf">CPF</label>
-                <input class="form-control" id="cpf" required [(ngModel)]="paciente.cpf" name="cpf" />
-            </div>
-
-            <div class="form-group">
-                <label for="dataNascimento">Data de Nascimento</label>
-                <input class="form-control" type="date" id="dataNascimento" required
-                    [(ngModel)]="paciente.dataNascimento" name="dataNascimento" />
-            </div>
-
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input class="form-control" type="email" id="email" required [(ngModel)]="paciente.email"
-                    name="email" />
-            </div>
-            <br>
-            <button (click)="savePaciente()" class="btn btn-dark">Salvar</button>
-        </div>
-
+    <div >
+        <app-paciente-form (save)="savePaciente($event)" *ngIf="!submitted"></app-paciente-form>
         <div *ngIf="submitted">
             <h4>Paciente cadastrado com sucesso!</h4>
-            <button class="btn btn-dark" (click)="newPaciente()">Novo Paciente</button>
+            <button class="btn btn-dark" type="button" (click)="newPaciente()">Novo Paciente</button>
         </div>
 
-        <div>
-            <br>
-            <button type="button" class="btn btn-dark" (click)="voltar()">
-                Voltar
-            </button>
-        </div>
     </div>
 </div>

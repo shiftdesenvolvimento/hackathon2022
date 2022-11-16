@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { finalize, take } from 'rxjs';
 import { Paciente } from '../../models/paciente.model';
 import { PacienteService } from '../../services/paciente.service';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-detalhe-paciente',
@@ -10,14 +11,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class DetalhePacienteComponent implements OnInit {
 
-  currentPaciente: Paciente = {
-    id: 0,
-    nome: '',
-    cpf: '',
-    dataNascimento: '',
-    email: '',
-  };
-
+  currentPaciente!: Paciente;
+  loading: boolean = true;
   message = '';
 
   constructor(
@@ -32,6 +27,10 @@ export class DetalhePacienteComponent implements OnInit {
 
   getPaciente(id: number): void {
     this.pacienteService.get(id)
+      .pipe(
+        take(1),
+        finalize(() => this.loading = false)
+      )
       .subscribe({
         next: (data) => {
           this.currentPaciente = data;
@@ -41,14 +40,16 @@ export class DetalhePacienteComponent implements OnInit {
       });
   }
 
-  updatePaciente(): void {
+  updatePaciente(paciente: Paciente): void {
     this.message = '';
 
-    this.pacienteService.update(this.currentPaciente.id, this.currentPaciente)
+    this.pacienteService.update(this.currentPaciente.id, paciente)
+      .pipe(take(1))
       .subscribe({
         next: (res) => {
           console.log(res);
           this.message = res.message ? res.message : 'Paciente atualizado com sucesso!';
+          this.voltar();
         },
         error: (e) => console.error(e)
       });
@@ -56,6 +57,7 @@ export class DetalhePacienteComponent implements OnInit {
 
   deletePaciente(): void {
     this.pacienteService.delete(this.currentPaciente.id)
+      .pipe(take(1))
       .subscribe({
         next: (res) => {
           console.log(res);

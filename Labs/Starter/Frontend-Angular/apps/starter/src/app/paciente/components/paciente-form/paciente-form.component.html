@@ -1,0 +1,60 @@
+<form class="form" [formGroup]="pacienteForm" (ngSubmit)="savePaciente()">
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" class="form-control" [class.is-invalid]="hasError('nome')" id="nome" required
+            formControlName="nome" name="nome" />
+        <div class="invalid-feedback">
+           Preencha o campo corretamente
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="cpf">CPF</label>
+        <input class="form-control" [class.is-invalid]="hasError('cpf')" id="cpf" required formControlName="cpf"
+            name="cpf" />
+        <div class="invalid-feedback">
+           Preencha o campo corretamente
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="dataNascimento">Data de Nascimento</label>
+        <input class="form-control" [class.is-invalid]="hasError('dataNascimento')" type="date" id="dataNascimento"
+            required formControlName="dataNascimento" name="dataNascimento" />
+        <div class="invalid-feedback">
+           Preencha o campo corretamente
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input class="form-control" [class.is-invalid]="hasError('email')" type="email" id="email" required
+            formControlName="email" name="email" />
+        <div class="invalid-feedback">
+           Preencha o campo corretamente
+        </div>
+    </div>
+
+    <div formArrayName="telefone" class="phones">
+        <div class="form-group" *ngFor="let telefone of telefone?.controls; let i = index">
+            <label for="dataNascimento" [for]="i">Telefone {{i+1}}</label>
+            <div class="phones--item input-group">
+                <input type="number" [id]="i" class="form-control" [class.is-invalid]="phoneHasError(i)"
+                    [formControlName]="i" placeholder="Telefone" />
+                    <div class="input-group-prepend">
+                        <button type="button" class="btn btn-outline-dark phones--remove" (click)="removerTelefone(i)">
+                            <span>&#10134;</span>
+                        </button>
+                      </div>
+                <div class="invalid-feedback">
+                   Preencha o campo corretamente
+                </div>                     
+            </div>
+        </div>
+
+        <button type="button" (click)="adicionarTelefone()" class="phones--add-button btn btn-outline-dark">
+            Adicionar telefone
+        </button>
+
+    </div>
+    <button type="submit" class="btn btn-dark">Salvar</button>
+</form>
