@@ -1,49 +1,27 @@
-<div *ngIf="currentPaciente.id" class="edit-form">
-    <h4>Paciente</h4>
-    <form>
-        <div class="form-group">
-            <label for="nome">Nome</label>
-            <input type="text" class="form-control" id="nome" [(ngModel)]="currentPaciente.nome" name="nome" />
-        </div>
-        <div class="form-group">
-            <label for="cpf">CPF</label>
-            <input type="text" class="form-control" id="cpf" [(ngModel)]="currentPaciente.cpf" name="cpf" />
-        </div>
-        <div class="form-group">
-            <label for="dataNascimento">Data de Nascimento</label>
-            <input type="date" class="form-control" id="dataNascimento" [(ngModel)]="currentPaciente.dataNascimento"
-                name="dataNascimento" />
-        </div>
-        <div class="form-group">
-            <label for="email">E-mail</label>
-            <input type="email" class="form-control" id="email" [(ngModel)]="currentPaciente.email" name="email" />
-        </div>
-    </form>
-    <br>
-    <div class="row">
-        <div class="col-md-8">
-            <button type="submit" class="btn btn-dark" (click)="updatePaciente()">
-                Atualizar
-            </button>
-            <p>{{ message }}</p>
-        </div>
-        <div class="col-md-4" style="text-align: right;">
-            <button class="btn btn-dark" (click)="deletePaciente()">
-                Apagar
-            </button>
-        </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col-md-8">
-            <button type="submit" class="btn btn-dark" (click)="voltar()">
-                Voltar
-            </button>
-        </div>
-    </div>
-</div>
+<div class="edit-form">
 
-<div *ngIf="!currentPaciente.id">
-    <br />
-    <p>Paciente não encontradp...</p>
+    <div *ngIf="!loading">
+        <button type="button" class="btn btn-dark" (click)="voltar()">
+            &#10094; Voltar
+        </button>
+    </div>
+
+    <div *ngIf="currentPaciente?.id && !loading">
+        <h4 style="text-align: center">Paciente</h4>
+        <app-paciente-form [paciente]="currentPaciente" (save)="updatePaciente($event)"></app-paciente-form>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-danger" (click)="deletePaciente()">
+                    Apagar
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <div *ngIf="!currentPaciente?.id && !loading">
+        <br />
+        <p>Paciente não encontrado...</p>
+    </div>
 </div>

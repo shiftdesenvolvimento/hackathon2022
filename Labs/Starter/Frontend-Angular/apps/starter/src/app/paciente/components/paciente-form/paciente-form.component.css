@@ -23,13 +23,21 @@
     font-weight: 500;
 }
 
+input[type=number] {
+    -moz-appearance: textfield;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
 .form {
     display: flex;
     flex-direction: column;
     width: 100%;
     gap: 1rem;
 }
-
 .header-container {
     display: flex;
     flex-direction: row;
@@ -53,17 +61,17 @@
     justify-content: center;
     align-items: center;
 }
-
 .phones--item {
-    display: flex;
+    /* display: flex;
     gap: 1rem;
-    flex-direction: row;
+    flex-direction: row; */
 }
 
-.phones>div {
+.phones>div{
     width: 100%;
 }
 
 .phones--add-button {
     width: 60%;
 }
+

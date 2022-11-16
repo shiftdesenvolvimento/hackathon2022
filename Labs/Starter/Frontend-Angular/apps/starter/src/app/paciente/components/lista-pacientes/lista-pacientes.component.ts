@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { take } from 'rxjs';
 import { Paciente } from '../../models/paciente.model';
 import { PacienteService } from '../../services/paciente.service';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-lista-pacientes',
@@ -11,13 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ListaPacientesComponent implements OnInit {
 
   pacientes?: Paciente[];
-  currentPaciente: Paciente = {
-    id: 0,
-    nome: '',
-    cpf: '',
-    dataNascimento: '',
-    email: ''
-  };
+
   currentIndex = -1;
   title = '';
 
@@ -32,6 +27,7 @@ export class ListaPacientesComponent implements OnInit {
 
   retrievePacientes(): void {
     this.pacienteService.getAll()
+      .pipe(take(1))
       .subscribe({
         next: (data) => {
           this.pacientes = data;
@@ -43,13 +39,7 @@ export class ListaPacientesComponent implements OnInit {
 
   refreshList(): void {
     this.retrievePacientes();
-    this.currentPaciente = {
-      id: 0,
-      nome: '',
-      cpf: '',
-      dataNascimento: '',
-      email: ''
-    };
+
     this.currentIndex = -1;
   }
 
