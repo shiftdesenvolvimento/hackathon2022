@@ -20,7 +20,7 @@ export class PacienteService {
     return this.http.get<Paciente>(`${baseUrl}/${id}`);
   }
 
-  create(data: any): Observable<any> {
+  create(data: Paciente): Observable<any> {
     return this.http.post(baseUrl, data);
   }
 

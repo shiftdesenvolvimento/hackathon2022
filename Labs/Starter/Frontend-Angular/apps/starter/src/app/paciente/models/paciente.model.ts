@@ -1,4 +1,3 @@
-import { Telefone } from "./telefone.model";
 
 export interface Paciente {
     id: number,
@@ -6,6 +5,6 @@ export interface Paciente {
     cpf: string,
     dataNascimento: string,
     //enderecos: Endereco[];
-    //telefones: Telefone[];
+    telefone?: string[];
     email: string,
 }
