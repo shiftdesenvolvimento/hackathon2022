@@ -24,11 +24,7 @@ public class AtendimentoMedicoService {
     PacienteService pacienteService;
     
     @Transactional
-    public AtendimentoMedicoDto salvar(AtendimentoMedicoDto atendimentoMedicoDto){
-
-        // var medico = medicoService.getById(atendimentoMedicoDto.getMedicoId());
-        // var paciente = medicoService.getById(atendimentoMedicoDto.getPacienteId());
-
+    public AtendimentoMedicoDto salvar(AtendimentoMedicoDto atendimentoMedicoDto) {
         return dao.salvar(atendimentoMedicoDto);
     }
 
